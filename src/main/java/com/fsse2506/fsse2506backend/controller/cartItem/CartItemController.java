@@ -16,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/cart/items")
+@CrossOrigin("http://localhost:5173")
 public class CartItemController {
 
     private final UserDataMapper userDataMapper;
