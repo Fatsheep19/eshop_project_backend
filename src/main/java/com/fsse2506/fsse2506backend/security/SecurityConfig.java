@@ -21,6 +21,7 @@ public class SecurityConfig {
                                 .anyRequest().authenticated()
                 )
                 .csrf(csrf -> csrf.disable())
+                .cors(Customizer.withDefaults())
                 .oauth2ResourceServer(oauth2 ->
                         oauth2.jwt(Customizer.withDefaults())
                 );
