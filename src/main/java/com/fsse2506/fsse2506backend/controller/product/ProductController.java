@@ -9,9 +9,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static com.fsse2506.fsse2506backend.config.EnvConfig.DEV_BASE_URL;
+import static com.fsse2506.fsse2506backend.config.EnvConfig.PROD_BASE_URL;
+
 @RestController
 @RequestMapping("/public/products")
-@CrossOrigin("http://localhost:5173")
+@CrossOrigin({DEV_BASE_URL, PROD_BASE_URL})
 public class ProductController {
 
     private final ProductRepository productRepository;

@@ -13,9 +13,12 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
 
+import static com.fsse2506.fsse2506backend.config.EnvConfig.DEV_BASE_URL;
+import static com.fsse2506.fsse2506backend.config.EnvConfig.PROD_BASE_URL;
+
 @RestController
 @RequestMapping("/transactions")
-@CrossOrigin("http://localhost:5173")
+@CrossOrigin({DEV_BASE_URL, PROD_BASE_URL})
 public class TransactionController {
 
 

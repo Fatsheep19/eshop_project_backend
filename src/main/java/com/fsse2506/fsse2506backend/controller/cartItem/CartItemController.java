@@ -1,5 +1,6 @@
 package com.fsse2506.fsse2506backend.controller.cartItem;
 
+import com.fsse2506.fsse2506backend.config.EnvConfig;
 import com.fsse2506.fsse2506backend.data.cartItem.domainObject.CartItemResponseData;
 import com.fsse2506.fsse2506backend.data.cartItem.dto.CartItemResponseDto;
 import com.fsse2506.fsse2506backend.data.user.domainObject.request.FirebaseUserData;
@@ -14,9 +15,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static com.fsse2506.fsse2506backend.config.EnvConfig.DEV_BASE_URL;
+import static com.fsse2506.fsse2506backend.config.EnvConfig.PROD_BASE_URL;
+
 @RestController
 @RequestMapping("/cart/items")
-@CrossOrigin("http://localhost:5173")
+@CrossOrigin({DEV_BASE_URL, PROD_BASE_URL})
 public class CartItemController {
 
     private final UserDataMapper userDataMapper;
